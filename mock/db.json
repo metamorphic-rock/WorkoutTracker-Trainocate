@@ -1,0 +1,118 @@
+{
+    "exercises":[
+        {
+            "id":1,
+            "exercise_name":"Benchpress",
+            "muscle_group_id": 1
+            
+        },
+        {
+            "id":2,
+            "exercise_name":"Squat",
+            "muscle_group_id":6
+        
+        },
+        {
+            "id":3,
+            "exercise_name":"Row",
+            "muscle_group_id":2
+            
+        }
+    ],
+    "muscle_groups":[
+        {
+            "id":1,
+            "name":"Chest"
+        },
+        {
+            "id":2,
+            "name":"Back"
+        },
+        {
+            "id":3,
+            "name":"Shoulders"
+        },
+        {
+            "id":4,
+            "name":"Arms"
+        },
+        {
+            "id":5,
+            "name":"Core"
+        },
+        {
+            "id":6,
+            "name":"Quads"
+        },
+        {
+            "id":7,
+            "name":"Hamstrings"
+        },
+        {
+            "id":8,
+            "name":"Calves"
+        }
+
+    ],
+    "exercise_sets":[
+        {
+            "exercise_id":1,
+            "id":1,
+            "weight":90,
+            "reps":5
+        },
+        {
+            "exercise_id":1,
+            "id":2,
+            "weight":80,
+            "reps":10
+        },
+        {
+            "exercise_id":1,
+            "id":3,
+            "weight":80,
+            "reps":8
+        },
+
+
+        {
+            "exercise_id":2,
+            "id":4,
+            "weight":110,
+            "reps":6
+        },
+        {
+            "exercise_id":2,
+            "id":5,
+            "weight":100,
+            "reps":10
+        },
+        {
+            "exercise_id":2,
+            "id":6,
+            "weight":100,
+            "reps":8
+        },
+
+
+        {
+            "exercise_id":3,
+            "id":7,
+            "weight":60,
+            "reps":10
+        },
+        {
+            "exercise_id":3,
+            "id":8,
+            "weight":60,
+            "reps":10
+        },
+        {
+            "exercise_id":3,
+            "id":9,
+            "weight":60,
+            "reps":8
+        }
+    ]
+
+}

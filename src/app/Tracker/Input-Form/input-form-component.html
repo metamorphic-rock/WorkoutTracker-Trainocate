@@ -1,0 +1,32 @@
+<div class="mt-2 mb-3"></div>
+<div class="card">
+  <div class="card-head">
+    <h2>{{cardTitle}}</h2>
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+      <label>Exercise</label>
+      <input type="text" class="form-control"/>
+      <label>Muscle Group</label>
+      <select class="form-control" name="" id="">
+        <option value="">Select a Muscle Group</option>
+        <option [value]="" *ngFor="let muscles of muscleGroup">{{muscles.name}}</option>
+      </select>
+      <br>
+      <label>Weight</label>
+      <input type="text" class="form-control"/>
+      <label>Reps</label>
+      <input type="text" class="form-control"/>
+    </div>
+    <hr>
+    <button class="btn btn-success" (click)="addSet()">
+      Add Set
+    </button>
+    <div class="mt-2 mb-5">
+    <button class="btn btn-danger" (click)="finishExercise()">
+      Finish Exercise
+    </button>
+    </div>
+  </div>
+</div>
+<div class="mt-2 mb-5"></div>
