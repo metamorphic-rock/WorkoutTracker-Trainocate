@@ -9,6 +9,7 @@ import { HeaderComponent } from './sections/Home/Header/header.component';
 import { FooterComponent } from './sections/Home/Footer/footer.component';
 import { TableRowComponent } from './Tracker/table-row/table-row.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,7 @@ import { TableRowComponent } from './Tracker/table-row/table-row.component';
     WorkoutSummaryComponentComponent,
     HeaderComponent,
     FooterComponent,
-    TableRowComponent
+    TableRowComponent,
   ],
   imports: [
     BrowserModule

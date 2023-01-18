@@ -1,14 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { MuscleGroupItems } from 'src/app/models/mucscle_group-items';
+import { SetItem } from 'src/app/models/set-items';
 @Component({
   selector: 'input-form-component',
   templateUrl: './input-form-component.html',
   styleUrls: ['./input-form-component.scss']
 })
 export class InputFormComponentComponent {
+  @Output() addSetEvent: EventEmitter<SetItem>=new EventEmitter<SetItem>() //Change the Any to interface Type
   addSet=()=>{
     console.log("Add set");
+    this.addSetEvent.emit({
+    'id': 1,
+    'exercise_id': 1,
+    'weight': 80,
+    'reps': 10
+  });
   }
+
+
   finishExercise=()=>{
     console.log("Finish exercise");
   }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {SetItem} from '../../models/set-items';
+
 @Component({
   selector: 'output-table-component',
   templateUrl: './output-table-component.html',

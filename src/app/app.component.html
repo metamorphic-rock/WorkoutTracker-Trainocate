@@ -1,6 +1,6 @@
 <app-header></app-header>
   <div class="container">
-    <input-form-component></input-form-component>
+    <input-form-component (addSetEvent)="formEventHandler($event)"></input-form-component> <!--(event) should be modified to name the event--> 
     <output-table-component></output-table-component>
     <workout-summary-component></workout-summary-component>
   </div>
