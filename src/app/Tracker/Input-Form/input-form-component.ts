@@ -11,6 +11,7 @@ export class InputFormComponentComponent{
   @Input() exerciseSet:SetItem={
     'exercise_id':2,
     'exercise_Name':"Row",
+    'muscle_group':"Back",
     'weight':60,
     'reps':12
   };

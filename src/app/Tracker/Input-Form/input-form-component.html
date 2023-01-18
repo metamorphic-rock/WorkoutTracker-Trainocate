@@ -8,7 +8,7 @@
       <label>Exercise</label>
       <input type="text" class="form-control" [(ngModel)]="exerciseSet.exercise_Name"/>
       <label>Muscle Group</label>
-      <select class="form-control" name="" id="">
+      <select class="form-control" id="" [(ngModel)]="exerciseSet.muscle_group">
         <option value="" selected disabled>Select a Muscle Group</option>
         <option [value]="" *ngFor="let muscles of muscleGroup">{{muscles.name}}</option>
       </select>

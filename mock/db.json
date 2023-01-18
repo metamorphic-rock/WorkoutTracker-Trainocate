@@ -1,3 +1,4 @@
+//The Set is modified, fixed in when there is a backend remove the muscle_group and exercise_name//
 {
     "exercises":[
         {
@@ -58,6 +59,7 @@
         {
             "exercise_id":1,
             "exercise_Name":"Benchpress",
+            "muscle_group":"Chest",
             "id":1,
             "weight":90,
             "reps":5
@@ -65,6 +67,7 @@
         {
             "exercise_id":1,
             "exercise_Name":"Benchpress",
+            "muscle_group":"Chest",
             "id":2,
             "weight":80,
             "reps":10
@@ -72,6 +75,7 @@
         {
             "exercise_id":1,
             "exercise_Name":"Benchpress",
+            "muscle_group":"Chest",
             "id":3,
             "weight":80,
             "reps":8
@@ -81,6 +85,7 @@
         {
             "exercise_id":2,
             "exercise_Name":"Row",
+            "muscle_group":"Back",
             "id":4,
             "weight":110,
             "reps":6
@@ -88,6 +93,7 @@
         {
             "exercise_id":2,
             "exercise_Name":"Row",
+            "muscle_group":"Back",
             "id":5,
             "weight":100,
             "reps":10
@@ -95,6 +101,7 @@
         {
             "exercise_id":2,
             "exercise_Name":"Row",
+            "muscle_group":"Back",
             "id":6,
             "weight":100,
             "reps":8
@@ -104,6 +111,7 @@
         {
             "exercise_id":3,
             "exercise_Name":"Squat",
+            "muscle_group":"Quads",
             "id":7,
             "weight":60,
             "reps":10
@@ -111,6 +119,7 @@
         {
             "exercise_id":3,
             "exercise_Name":"Squat",
+            "muscle_group":"Quads",
             "id":8,
             "weight":60,
             "reps":10
@@ -118,6 +127,7 @@
         {
             "exercise_id":3,
             "exercise_Name":"Squat",
+            "muscle_group":"Quads",
             "id":9,
             "weight":60,
             "reps":8
