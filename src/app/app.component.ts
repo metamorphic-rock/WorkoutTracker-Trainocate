@@ -7,9 +7,11 @@ import {SetItem} from './models/set-items';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  formEventHandler=(payload:any)=>{
+  setItems: SetItem[]=[];
+  formEventHandler=(payload:SetItem)=>{
     console.log("handling form event handler");
     console.log(payload);
+    this.setItems.push(payload);
   }
 
 }

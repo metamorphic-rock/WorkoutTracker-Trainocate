@@ -18,7 +18,7 @@ export class InputFormComponentComponent {
   });
   }
 
-
+  @Output() addExerciseEvent: EventEmitter<any>=new EventEmitter<any>()
   finishExercise=()=>{
     console.log("Finish exercise");
   }
