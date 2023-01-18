@@ -9,14 +9,17 @@ import { SetItem } from 'src/app/models/set-items';
 export class InputFormComponentComponent{
 
   @Input() exerciseSet:SetItem={
-    'exercise_id':2,
-    'exercise_Name':"Row",
-    'muscle_group':"Back",
-    'weight':60,
-    'reps':12
+    'exercise_id':0,
+    'exercise_Name':"",
+    'muscle_group':"",
+    'weight':0,
+    'reps':0
   };
   @Output() addSetEvent: EventEmitter<SetItem>=new EventEmitter<SetItem>(); //Change the Any to interface Type
   addSet=()=>{
+    if(this.exerciseSet.exercise_Name==""||this.exerciseSet.reps==0){
+      return;
+    }
     console.log("Add set");
     this.addSetEvent.emit(this.exerciseSet);
   }
@@ -25,7 +28,7 @@ export class InputFormComponentComponent{
   finishExercise=()=>{
     console.log("Finish exercise");
   }
-  cardTitle: string="Log you Exercises Here";
+  cardTitle: string="Log your Exercises Here";
   muscleGroup: MuscleGroupItems[]=[
     {
       "id":1,

@@ -12,9 +12,9 @@ export class AppComponent {
   formEventHandler=(payload:SetItem)=>{
     console.log("handling form event handler");
     console.log(payload);
-    let newSet={...payload}
+    let newSet={...payload};
     this.setItems.push(newSet);
+    console.log(this.setItems.length);
   };
-  numberOfSets: number=0;
 
 }

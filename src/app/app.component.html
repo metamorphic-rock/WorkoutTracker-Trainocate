@@ -4,7 +4,7 @@
     <div class="card">
       <div class="card-header"> 
         <h2>Workout Log</h2>
-        <p>Number of Logged Sets: {{numberOfSets}}</p>
+        <p>Number of Logged Sets: {{this.setItems.length}}</p>
       </div>
       <div class="card-body">
         <output-table-component *ngFor="let s of setItems" [set]="s">
