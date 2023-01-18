@@ -1,7 +1,7 @@
 <app-header></app-header>
   <div class="container">
     <input-form-component (addSetEvent)="formEventHandler($event)"></input-form-component> <!--(event) should be modified to name the event--> 
-    <div class="card">
+    <div class="card" *ngIf="this.setItems.length>0">
       <div class="card-header"> 
         <h2>Workout Log</h2>
         <p>Number of Logged Sets: {{this.setItems.length}}</p>

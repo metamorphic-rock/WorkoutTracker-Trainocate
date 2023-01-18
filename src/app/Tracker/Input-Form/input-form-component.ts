@@ -26,6 +26,10 @@ export class InputFormComponentComponent{
 
   @Output() addExerciseEvent: EventEmitter<any>=new EventEmitter<any>()
   finishExercise=()=>{
+    this.exerciseSet.exercise_Name='';
+    this.exerciseSet.muscle_group='';
+    this.exerciseSet.weight=0;
+    this.exerciseSet.reps=0;
     console.log("Finish exercise");
   }
   cardTitle: string="Log your Exercises Here";
