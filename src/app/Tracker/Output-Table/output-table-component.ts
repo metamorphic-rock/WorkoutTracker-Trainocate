@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 import {SetItem} from '../../models/set-items';
 
 @Component({
@@ -28,4 +28,5 @@ export class OutputTableComponentComponent {
   },
   ];
   sets: number=this.setItems.length;
+  @Input() set: SetItem;
 }

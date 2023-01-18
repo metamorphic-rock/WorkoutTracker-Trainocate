@@ -1,8 +1,10 @@
 <app-header></app-header>
   <div class="container">
     <input-form-component (addSetEvent)="formEventHandler($event)"></input-form-component> <!--(event) should be modified to name the event--> 
-    <div>
-      <output-table-component></output-table-component>
+    <div class="card">
+      <output-table-component *ngFor="let s of setItems" [set]="s">
+
+      </output-table-component>
     </div>    
     <workout-summary-component></workout-summary-component>
   </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 import {SetItem} from './models/set-items';
 
 @Component({
@@ -7,6 +7,7 @@ import {SetItem} from './models/set-items';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  @Input() set: SetItem;
   setItems: SetItem[]=[];
   formEventHandler=(payload:SetItem)=>{
     console.log("handling form event handler");
