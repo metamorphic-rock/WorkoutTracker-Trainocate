@@ -19,7 +19,7 @@ export class InputFormComponentComponent{
   addSet=()=>{
     if(this.exerciseSet.exercise_Name==""||this.exerciseSet.reps==0){
       return;
-    }
+    };
     console.log("Add set");
     this.addSetEvent.emit(this.exerciseSet);
   }
