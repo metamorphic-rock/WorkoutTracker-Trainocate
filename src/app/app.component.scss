@@ -1,3 +1,8 @@
 div{
     padding: 15px;
 }
+.table-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

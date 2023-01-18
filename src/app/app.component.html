@@ -7,11 +7,17 @@
         <p>Number of Logged Sets: {{this.setItems.length}}</p>
       </div>
       <div class="card-body">
-        <output-table-component *ngFor="let s of setItems" [set]="s">
-        </output-table-component>
+        <div class="table-header">
+          <h4>Exercise</h4>
+          <h4>Muscle Group</h4>
+          <h4>Weight</h4>
+          <h4>Reps</h4>
+        </div>
+        <hr>
+          <output-table-component *ngFor="let s of setItems" [set]="s">
+          </output-table-component>
       </div>
     </div>   
-    <hr> 
     <workout-summary-component></workout-summary-component>
   </div>
 <app-footer></app-footer>

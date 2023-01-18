@@ -17,7 +17,7 @@ export class InputFormComponentComponent{
   };
   @Output() addSetEvent: EventEmitter<SetItem>=new EventEmitter<SetItem>(); //Change the Any to interface Type
   addSet=()=>{
-    if(this.exerciseSet.exercise_Name==""||this.exerciseSet.reps==0){
+    if(this.exerciseSet.exercise_Name==""||this.exerciseSet.muscle_group==""||this.exerciseSet.reps==0){
       return;
     };
     console.log("Add set");
@@ -26,6 +26,9 @@ export class InputFormComponentComponent{
 
   @Output() addExerciseEvent: EventEmitter<any>=new EventEmitter<any>()
   finishExercise=()=>{
+    if(this.exerciseSet.exercise_Name==""||this.exerciseSet.muscle_group==""||this.exerciseSet.reps==0){
+      return;
+    };
     this.exerciseSet.exercise_Name='';
     this.exerciseSet.muscle_group='';
     this.exerciseSet.weight=0;

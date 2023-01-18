@@ -8,6 +8,7 @@ import { WorkoutSummaryComponentComponent } from './sections/workout-summary/wor
 import { HeaderComponent } from './sections/Home/Header/header.component';
 import { FooterComponent } from './sections/Home/Footer/footer.component';
 import { FormsModule } from '@angular/forms';
+import { OutputFormComponent } from './Tracker/output-form/output-form.component';
 
 
 
@@ -19,6 +20,7 @@ import { FormsModule } from '@angular/forms';
     WorkoutSummaryComponentComponent,
     HeaderComponent,
     FooterComponent,
+    OutputFormComponent,
   ],
   imports: [
     BrowserModule,

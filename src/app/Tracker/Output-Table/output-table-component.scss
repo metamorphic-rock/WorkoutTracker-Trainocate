@@ -2,6 +2,14 @@ thead{
     font-weight: bold;
     margin: 0;
 }
-div{
-    margin: 20px;
+.setEntry{
+    font-size: large;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.muscleGroup{
+    font-style: italic;
 }
