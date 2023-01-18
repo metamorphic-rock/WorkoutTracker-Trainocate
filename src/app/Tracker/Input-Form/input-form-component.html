@@ -6,17 +6,17 @@
   <div class="card-body">
     <div class="form-group">
       <label>Exercise</label>
-      <input type="text" class="form-control"/>
+      <input type="text" class="form-control" [(ngModel)]="exerciseSet.exercise_Name"/>
       <label>Muscle Group</label>
       <select class="form-control" name="" id="">
-        <option value="">Select a Muscle Group</option>
+        <option value="" selected disabled>Select a Muscle Group</option>
         <option [value]="" *ngFor="let muscles of muscleGroup">{{muscles.name}}</option>
       </select>
       <br>
       <label>Weight</label>
-      <input type="text" class="form-control"/>
+      <input type="text" class="form-control" [(ngModel)]="exerciseSet.weight"/>
       <label>Reps</label>
-      <input type="text" class="form-control"/>
+      <input type="text" class="form-control" [(ngModel)]="exerciseSet.reps"/>
     </div>
     <hr>
     <button class="btn btn-success" (click)="addSet()">

@@ -7,7 +7,8 @@ import { OutputTableComponentComponent } from './Tracker/Output-Table/output-tab
 import { WorkoutSummaryComponentComponent } from './sections/workout-summary/workout-summary.component';
 import { HeaderComponent } from './sections/Home/Header/header.component';
 import { FooterComponent } from './sections/Home/Footer/footer.component';
-import { TableRowComponent } from './Tracker/table-row/table-row.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -18,10 +19,10 @@ import { TableRowComponent } from './Tracker/table-row/table-row.component';
     WorkoutSummaryComponentComponent,
     HeaderComponent,
     FooterComponent,
-    TableRowComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
