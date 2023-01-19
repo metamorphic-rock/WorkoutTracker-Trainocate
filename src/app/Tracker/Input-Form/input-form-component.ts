@@ -7,9 +7,8 @@ import { SetItem } from 'src/app/models/set-items';
   styleUrls: ['./input-form-component.scss']
 })
 export class InputFormComponentComponent{
-
   @Input() exerciseSet:SetItem={
-    'exercise_id':0,
+    'id': 0,
     'exercise_Name':"",
     'muscle_group':"",
     'weight':0,
@@ -21,6 +20,8 @@ export class InputFormComponentComponent{
       return;
     };
     console.log("Add set");
+    this.exerciseSet.id=new Date().getTime();;
+    console.log(this.exerciseSet.id);
     this.addSetEvent.emit(this.exerciseSet);
   }
 

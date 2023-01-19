@@ -53,9 +53,15 @@ export class AppComponent {
     this.workoutSummary.calve.totalVolume=this.calculateVolumeService.calculateVolumeByMuscleGroup(this.setItems,"Calves");
     this.workoutSummary.calve.totalSets=this.calculateVolumeService.calculateTotalSetsByMuscleGroup(this.setItems,"Calves");
   };
-  deleteSetEventHandler=()=>{
+  deleteSetEventHandler=(set:any)=>{ //fix the bug, workout sumarry is not updating
     console.log("handling delete set event")
-    this.setItems.pop()
+    let setIndex=this.setItems.findIndex(e => e.id===set.id);
+    this.setItems.splice(setIndex,1)
+    console.log(set.id);
+    console.log(setIndex);
+  }
+  editSetEventHandler=()=>{
+    console.log("handling edit set event");
   }
 
 }

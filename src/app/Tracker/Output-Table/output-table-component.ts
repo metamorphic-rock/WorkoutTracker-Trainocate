@@ -8,11 +8,16 @@ import {SetItem} from '../../models/set-items';
 })
 export class OutputTableComponentComponent {
   @Input() set: SetItem;
-  EditSet=()=>{};
+  @Output() editSetEvent : EventEmitter<any>=new EventEmitter<any>();
+  EditSet=()=>{
+    console.log("Edit set");
+
+  };
   @Output() deleteSetEvent: EventEmitter<any>=new EventEmitter<any>();
   DeleteSet=()=>{
     console.log("Delete set");
     console.log(this.set);
+    let id=this.set.id
     this.deleteSetEvent.emit(this.set);
   };
 }
