@@ -14,9 +14,9 @@
       </select>
       <br>
       <label>Weight</label>
-      <input type="text" class="form-control" [(ngModel)]="exerciseSet.weight"/>
+      <input type="number" class="form-control" [(ngModel)]="exerciseSet.weight"/>
       <label>Reps</label>
-      <input type="text" class="form-control" [(ngModel)]="exerciseSet.reps"/>
+      <input type="number" class="form-control" [(ngModel)]="exerciseSet.reps"/>
     </div>
     <hr>
     <button class="btn btn-success" (click)="addSet()">
