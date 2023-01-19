@@ -15,4 +15,13 @@ export class CalculateVolumeService {
     });
     return workoutVolume;
   }
+  calculateTotalSetsByMuscleGroup=(setItems:SetItem[],muscleGroup:string):number=>{
+    let totalSet=0;
+    setItems.forEach((element:SetItem)=>{
+      if(element.muscle_group==muscleGroup){
+        totalSet+=1;
+      }
+    })
+    return totalSet;
+  }
 }
