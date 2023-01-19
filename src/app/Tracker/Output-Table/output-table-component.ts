@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { Component,Input,Output, EventEmitter } from '@angular/core';
 import {SetItem} from '../../models/set-items';
 
 @Component({
@@ -9,7 +9,10 @@ import {SetItem} from '../../models/set-items';
 export class OutputTableComponentComponent {
   @Input() set: SetItem;
   EditSet=()=>{};
+  @Output() deleteSetEvent: EventEmitter<any>=new EventEmitter<any>();
   DeleteSet=()=>{
     console.log("Delete set");
+    console.log(this.set);
+    this.deleteSetEvent.emit(this.set);
   };
 }

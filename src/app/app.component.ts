@@ -22,8 +22,8 @@ export class AppComponent {
     calve:{totalSets:0,totalVolume:0}
   }
   constructor(private calculateVolumeService: CalculateVolumeService){}
-  formEventHandler=(payload:SetItem)=>{
-    console.log("handling form event handler from app component");
+  addSetEventHandler=(payload:SetItem)=>{
+    console.log("handling add set event");
     console.log(payload);
     let newSet={...payload};
     this.setItems.push(newSet);
@@ -53,6 +53,9 @@ export class AppComponent {
     this.workoutSummary.calve.totalVolume=this.calculateVolumeService.calculateVolumeByMuscleGroup(this.setItems,"Calves");
     this.workoutSummary.calve.totalSets=this.calculateVolumeService.calculateTotalSetsByMuscleGroup(this.setItems,"Calves");
   };
-
+  deleteSetEventHandler=()=>{
+    console.log("handling delete set event")
+    this.setItems.pop()
+  }
 
 }
