@@ -8,4 +8,8 @@ import {SetItem} from '../../models/set-items';
 })
 export class OutputTableComponentComponent {
   @Input() set: SetItem;
+  EditSet=()=>{};
+  DeleteSet=()=>{
+    console.log("Delete set");
+  };
 }

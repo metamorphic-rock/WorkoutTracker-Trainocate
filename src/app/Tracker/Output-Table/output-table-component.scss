@@ -1,15 +1,16 @@
-thead{
-    font-weight: bold;
-    margin: 0;
+div{
+    padding-left: 20px;
+    padding-right: 20px;
 }
-.setEntry{
-    font-size: large;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-left: 10px;
-    margin-right: 10px;
+.exerciseName{
+    font-weight: bold;
 }
 .muscleGroup{
+    font-weight: bold;
     font-style: italic;
+}
+#button{
+    height: 90%;
+    display: flex;
+    justify-content: space-around;
 }

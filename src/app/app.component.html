@@ -2,22 +2,10 @@
   <div class="container">
     <input-form-component (addSetEvent)="formEventHandler($event)"></input-form-component> <!--(event) should be modified to name the event--> 
     <div class="card" *ngIf="this.setItems.length>0">
-      <div class="card-header"> 
-        <h2>Workout Log</h2>
-        <p>Number of Logged Sets: {{this.setItems.length}}</p>
-      </div>
-      <div class="card-body">
-        <div class="table-header">
-          <h4>Exercise</h4>
-          <h4>Muscle Group</h4>
-          <h4>Weight</h4>
-          <h4>Reps</h4>
-        </div>
-        <hr>
-          <output-table-component *ngFor="let s of setItems" [set]="s">
-          </output-table-component>
-      </div>
-    </div>   
-    <workout-summary-component [workoutSummary]="workoutSummary"></workout-summary-component>
-  </div>
+        <app-table-header [numberOfSets]="setItems.length"></app-table-header>
+        <output-table-component *ngFor="let set of setItems" [set]="set"></output-table-component>
+    </div> 
+  <workout-summary-component *ngIf="this.setItems.length>0" [workoutSummary]="workoutSummary"></workout-summary-component>
+  </div>  
 <app-footer></app-footer>
+

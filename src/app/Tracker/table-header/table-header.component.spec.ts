@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OutputFormComponent } from './output-form.component';
+import { TableHeaderComponent } from './table-header.component';
 
-describe('OutputFormComponent', () => {
-  let component: OutputFormComponent;
-  let fixture: ComponentFixture<OutputFormComponent>;
+describe('TableHeaderComponent', () => {
+  let component: TableHeaderComponent;
+  let fixture: ComponentFixture<TableHeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OutputFormComponent ]
+      declarations: [ TableHeaderComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(OutputFormComponent);
+    fixture = TestBed.createComponent(TableHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
