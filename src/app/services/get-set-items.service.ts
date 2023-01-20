@@ -22,7 +22,7 @@ export class GetSetItemsService {
     return sets
   }
   getSetById=(id:number):Observable<SetItem>=>{
-    let set=this.http.get<SetItem>(`${this.baseUrl}/set-item/id/${id}`, httpOptions)
+    let set=this.http.get<SetItem>(`${this.baseUrl}/exercise_sets/${id}`, httpOptions)
     return set
   }
 }
