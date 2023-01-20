@@ -26,7 +26,7 @@ export class AppComponent implements OnInit{
     console.log("ngOnInit is fired")
     this.getSetItemsService.getAllSet().subscribe((set)=>{
       this.setItems=set;
-      this.updateSummary()
+      this.updateSummary();
     })
   }
   constructor(private calculateVolumeService: CalculateVolumeService, 
@@ -67,7 +67,7 @@ export class AppComponent implements OnInit{
   deleteSetEventHandler=(set:any)=>{ //fix the bug, workout sumarry is not updating
     console.log("handling delete set event")
     let setIndex=this.setItems.findIndex(e => e.id===set.id);
-    this.setItems.splice(setIndex,1)
+    this.setItems.splice(setIndex,1);
     console.log(set.id);
     console.log(setIndex);
     this.updateSummary();
