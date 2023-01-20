@@ -22,13 +22,7 @@ export class AppComponent {
     calve:{totalSets:0,totalVolume:0}
   }
   constructor(private calculateVolumeService: CalculateVolumeService){}
-  addSetEventHandler=(payload:SetItem)=>{
-    console.log("handling add set event");
-    console.log(payload);
-    let newSet={...payload};
-    this.setItems.push(newSet);
-    console.log(this.setItems.length);
-
+  updateSummary=()=>{
     this.workoutSummary.chest.totalVolume=this.calculateVolumeService.calculateVolumeByMuscleGroup(this.setItems,"Chest");
     this.workoutSummary.chest.totalSets=this.calculateVolumeService.calculateTotalSetsByMuscleGroup(this.setItems,"Chest");
 
@@ -52,6 +46,14 @@ export class AppComponent {
 
     this.workoutSummary.calve.totalVolume=this.calculateVolumeService.calculateVolumeByMuscleGroup(this.setItems,"Calves");
     this.workoutSummary.calve.totalSets=this.calculateVolumeService.calculateTotalSetsByMuscleGroup(this.setItems,"Calves");
+  }
+  addSetEventHandler=(payload:SetItem)=>{
+    console.log("handling add set event");
+    console.log(payload);
+    let newSet={...payload};
+    this.setItems.push(newSet);
+    console.log(this.setItems.length);
+    this.updateSummary();
   };
   deleteSetEventHandler=(set:any)=>{ //fix the bug, workout sumarry is not updating
     console.log("handling delete set event")
@@ -59,6 +61,7 @@ export class AppComponent {
     this.setItems.splice(setIndex,1)
     console.log(set.id);
     console.log(setIndex);
+    this.updateSummary();
   }
   editSetEventHandler=()=>{
     console.log("handling edit set event");
