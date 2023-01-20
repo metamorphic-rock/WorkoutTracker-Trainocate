@@ -1,14 +1,15 @@
-import { Component,Input } from '@angular/core';
+import { Component,Input,OnInit } from '@angular/core';
 import {SetItem} from './models/set-items';
 import { WorkoutSummary } from './models/workout-summary';
 import { CalculateVolumeService } from './services/calculate-volume.service';
+import { GetSetItemsService } from './services/get-set-items.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   @Input() set: SetItem;
   setItems: SetItem[]=[];
   workoutSummary: WorkoutSummary={
@@ -21,7 +22,14 @@ export class AppComponent {
     hamstring:{totalSets:0,totalVolume:0},
     calve:{totalSets:0,totalVolume:0}
   }
-  constructor(private calculateVolumeService: CalculateVolumeService){}
+  ngOnInit(): void {    //calling service
+    console.log("ngOnInit is fired")
+    this.getSetItemsService.getAllSet().subscribe((set)=>{
+      this.setItems=set;
+    })
+  }
+  constructor(private calculateVolumeService: CalculateVolumeService, 
+              private getSetItemsService:GetSetItemsService){}
   updateSummary=()=>{
     this.workoutSummary.chest.totalVolume=this.calculateVolumeService.calculateVolumeByMuscleGroup(this.setItems,"Chest");
     this.workoutSummary.chest.totalSets=this.calculateVolumeService.calculateTotalSetsByMuscleGroup(this.setItems,"Chest");

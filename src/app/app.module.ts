@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { InputFormComponentComponent } from './Tracker/Input-Form/input-form-component';
@@ -25,7 +26,8 @@ import { TableHeaderComponent } from './Tracker/table-header/table-header.compon
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
