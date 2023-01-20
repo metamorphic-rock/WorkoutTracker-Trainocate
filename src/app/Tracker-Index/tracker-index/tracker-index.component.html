@@ -1,0 +1,9 @@
+<div class="container">
+    <input-form-component (addSetEvent)="addSetEventHandler($event)"></input-form-component> <!--(event) should be modified to name the event--> 
+    <div class="card" *ngIf="this.setItems.length>0">
+        <app-table-header [numberOfSets]="setItems.length"></app-table-header>
+        <output-table-component (deleteSetEvent)="deleteSetEventHandler($event)" (editSetEvent)="editSetEventHandler()" 
+        *ngFor="let set of setItems" [set]="set"></output-table-component>
+    </div> 
+  <workout-summary-component *ngIf="this.setItems.length>0" [workoutSummary]="workoutSummary"></workout-summary-component>
+  </div>  

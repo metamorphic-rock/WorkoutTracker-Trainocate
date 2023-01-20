@@ -13,9 +13,9 @@
             <h5>{{set.reps}}</h5>
         </div>
         <div class="col-1" id="button">
-            <button class="btn btn-warning" (click)="EditSet()">
-                Edit
-            </button>
+            <a routerLink="/set-item/id={{set.id}}" class="btn btn-warning">
+                Show
+             </a>
             <button class="btn btn-danger" (click)="DeleteSet()">
                 Del
             </button>

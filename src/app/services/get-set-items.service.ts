@@ -21,4 +21,8 @@ export class GetSetItemsService {
     sets=this.http.get<SetItem[]>(`${this.baseUrl}/exercise_sets`,httpOptions)
     return sets
   }
+  getSetById=(id:number):Observable<SetItem>=>{
+    let set=this.http.get<SetItem>(`${this.baseUrl}/set-item/id/${id}`, httpOptions)
+    return set
+  }
 }
