@@ -26,6 +26,7 @@ export class AppComponent implements OnInit{
     console.log("ngOnInit is fired")
     this.getSetItemsService.getAllSet().subscribe((set)=>{
       this.setItems=set;
+      this.updateSummary()
     })
   }
   constructor(private calculateVolumeService: CalculateVolumeService, 
