@@ -10,7 +10,7 @@ import { GetSetItemsService } from 'src/app/services/get-set-items.service'
 })
 export class SetItemComponent implements OnInit{
   id:number
-  setItem: SetItem={
+  set: SetItem={
     id: 0,
     exercise_Name:"",
     muscle_group:"",
@@ -25,7 +25,7 @@ export class SetItemComponent implements OnInit{
   ngOnInit(): void {
     this.id = Number(this.route.snapshot.paramMap.get('id'))
     this.getSetItemsService.getSetById(this.id).subscribe((set)=>{
-      this.setItem=set
+      this.set=set
     })
     console.log(`ShowComponent for id ${this.id}`)
   }

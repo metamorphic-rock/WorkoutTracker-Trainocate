@@ -1,39 +1,41 @@
-import { Component,Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component,Input, Output, EventEmitter} from '@angular/core';
 import { MuscleGroupItems } from 'src/app/models/mucscle_group-items';
 import { SetItem } from 'src/app/models/set-items';
+import { GetSetItemsService } from 'src/app/services/get-set-items.service';
 @Component({
   selector: 'input-form-component',
   templateUrl: './input-form-component.html',
   styleUrls: ['./input-form-component.scss']
 })
 export class InputFormComponentComponent{
-  @Input() exerciseSet:SetItem={
+  @Input() set:SetItem={
     'id': 0,
     'exercise_Name':"",
     'muscle_group':"",
     'weight':0,
     'reps':0
   };
+  constructor(private getSetItemService: GetSetItemsService){}
   @Output() addSetEvent: EventEmitter<SetItem>=new EventEmitter<SetItem>(); //Change the Any to interface Type
   addSet=()=>{
-    if(this.exerciseSet.exercise_Name==""||this.exerciseSet.muscle_group==""||this.exerciseSet.reps<=0||this.exerciseSet.weight<0){
+    if(this.set.exercise_Name==""||this.set.muscle_group==""||this.set.reps<=0||this.set.weight<0){
       return;
     };
     console.log("Add set");
-    this.exerciseSet.id=new Date().getTime();;
-    console.log(this.exerciseSet.id);
-    this.addSetEvent.emit(this.exerciseSet);
+    this.set.id=new Date().getTime();;
+    console.log(this.set.id);
+    this.addSetEvent.emit(this.set);
   }
 
   @Output() addExerciseEvent: EventEmitter<any>=new EventEmitter<any>()
   finishExercise=()=>{
-    if(this.exerciseSet.exercise_Name==""||this.exerciseSet.muscle_group==""||this.exerciseSet.reps<=0||this.exerciseSet.weight<0){
+    if(this.set.exercise_Name==""||this.set.muscle_group==""||this.set.reps<=0||this.set.weight<0){
       return;
     };
-    this.exerciseSet.exercise_Name='';
-    this.exerciseSet.muscle_group='';
-    this.exerciseSet.weight=0;
-    this.exerciseSet.reps=0;
+    this.set.exercise_Name='';
+    this.set.muscle_group='';
+    this.set.weight=0;
+    this.set.reps=0;
     console.log("Finish exercise");
   }
   cardTitle: string="Log your Exercises Here";

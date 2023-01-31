@@ -25,4 +25,14 @@ export class GetSetItemsService {
     let set=this.http.get<SetItem>(`${this.baseUrl}/exercise_sets/${id}`, httpOptions)
     return set
   }
+  saveSet=(setItem:SetItem): Observable<SetItem>=>{
+    let set: Observable<SetItem>
+    if(setItem.id){
+      const url=`${this.baseUrl}/exercise_sets/${setItem.id}`
+      set=this.http.put<SetItem>(url,setItem,httpOptions)
+    }else{
+      set=this.http.post<SetItem>(`${this.baseUrl}/exercise_sets`,setItem,httpOptions)
+    }
+    return set
+  }
 }
