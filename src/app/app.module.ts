@@ -15,6 +15,7 @@ import { TrackerIndexComponent } from './Tracker-Index/tracker-index/tracker-ind
 import { WorkoutHistoryComponent } from './Workout-History/workout-history.component';
 import { HomePageComponent } from './Home-Page/home-page.component';
 import { SetItemComponent } from './Tracker-Index/Tracker-Index/set-item.component';
+import { FinishedWorkoutComponent } from './Workout-History/finished-workout/finished-workout.component';
 
 const appRoutes: Routes=[
   {path:'home',component:HomePageComponent},
@@ -37,6 +38,7 @@ const appRoutes: Routes=[
     WorkoutHistoryComponent,
     HomePageComponent,
     SetItemComponent,
+    FinishedWorkoutComponent,
   ],
   imports: [
     BrowserModule,
