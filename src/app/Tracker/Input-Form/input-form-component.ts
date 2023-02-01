@@ -15,8 +15,7 @@ export class InputFormComponentComponent{
     'weight':0,
     'reps':0
   };
-  constructor(private getSetItemService: GetSetItemsService){
-  }
+  constructor(private getSetItemService: GetSetItemsService){}
   @Output() addSetEvent: EventEmitter<SetItem>=new EventEmitter<SetItem>(); //Change the Any to interface Type
   addSet=()=>{
     if(this.set.exercise_Name==""||this.set.muscle_group==""||this.set.reps<=0||this.set.weight<0){

@@ -3,6 +3,7 @@ import { SetItem } from '../models/set-items';
 import{ HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs'
 
+
 const httpOptions={
   headers: new HttpHeaders({
     'Content-type':'application/json'
@@ -37,6 +38,10 @@ export class GetSetItemsService {
   }
   deleteSet=(id:number):Observable<SetItem>=>{
     let set=this.http.delete<SetItem>(`${this.baseUrl}/exercise_sets/${id}`, httpOptions)
+    return set
+  }
+  editSet=(setItem:SetItem,id:number):Observable<SetItem>=>{
+    let set=this.http.put<SetItem>(`${this.baseUrl}/exercise_sets/${id}`, httpOptions)
     return set
   }
 }

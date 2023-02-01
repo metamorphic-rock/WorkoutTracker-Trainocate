@@ -9,9 +9,16 @@
         <label>Exercise</label>
         <input type="text" class="form-control" [(ngModel)]="set.exercise_Name"/>
         <label>Muscle Group</label>
-        <select class="form-control" id="" [(ngModel)]="set.muscle_group">
+        <select class="form-control" [(ngModel)]="set.muscle_group">
           <option value="" selected disabled>Select a Muscle Group</option>
-          <!-- <option [value]="" *ngFor="let muscles of muscleGroup">{{muscles.name}}</option> -->
+          <option value="Chest">Chest</option>
+          <option value="Back">Back</option> 
+          <option value="Shoulders">Shoulders</option> 
+          <option value="Arms">Arms</option> 
+          <option value="Core">Core</option> 
+          <option value="Quads">Quads</option> 
+          <option value="Hamstrings">Hamstrings</option>  
+          <option value="Calves">Calves</option> 
         </select>
         <br>
         <label>Weight</label>
@@ -19,13 +26,13 @@
         <label>Reps</label>
         <input type="number" class="form-control" [(ngModel)]="set.reps"/>
       </div>
-      <hr>
-      <!-- <button class="btn btn-success" (click)="addSet()">
-        Add Set
-      </button> -->
+      <br>
+      <button routerLink="/tracker" class="btn btn-success" (onclick)="updateSet(set,set.id)">
+        Save Changes
+      </button>
   <hr/>
-  <a routerLink="/tracker">
-    Go Back
+  <a routerLink="/tracker" class="btn btn-primary">
+    Discard Changes
   </a>
   </div>
 </div>

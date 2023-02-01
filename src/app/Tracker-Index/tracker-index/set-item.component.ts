@@ -30,4 +30,9 @@ export class SetItemComponent implements OnInit{
     })
     console.log(`ShowComponent for id ${this.id}`)
   }
+  updateSet=(set:SetItem,id:number)=>{
+    this.getSetItemsService.editSet(set,id).subscribe((set)=>{
+      console.log("update set")
+    })
+  }
 }
