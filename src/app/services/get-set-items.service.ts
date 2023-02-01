@@ -35,4 +35,8 @@ export class GetSetItemsService {
     }
     return set
   }
+  deleteSet=(id:number):Observable<SetItem>=>{
+    let set=this.http.delete<SetItem>(`${this.baseUrl}/exercise_sets/${id}`, httpOptions)
+    return set
+  }
 }

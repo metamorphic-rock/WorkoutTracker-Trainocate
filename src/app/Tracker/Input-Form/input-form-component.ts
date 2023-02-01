@@ -15,16 +15,22 @@ export class InputFormComponentComponent{
     'weight':0,
     'reps':0
   };
-  constructor(private getSetItemService: GetSetItemsService){}
+  constructor(private getSetItemService: GetSetItemsService){
+  }
   @Output() addSetEvent: EventEmitter<SetItem>=new EventEmitter<SetItem>(); //Change the Any to interface Type
   addSet=()=>{
     if(this.set.exercise_Name==""||this.set.muscle_group==""||this.set.reps<=0||this.set.weight<0){
       return;
     };
+    let payload={...this.set}
     console.log("Add set");
-    this.set.id=new Date().getTime();;
-    console.log(this.set.id);
-    this.addSetEvent.emit(this.set);
+    // this.set.id=new Date().getTime();;
+    // console.log(this.set.id);
+    
+    this.getSetItemService.saveSet(payload).subscribe((set)=>{
+      this.addSetEvent.emit(set);
+    })
+    
   }
 
   @Output() addExerciseEvent: EventEmitter<any>=new EventEmitter<any>()
