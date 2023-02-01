@@ -1,14 +1,28 @@
 <p>set-item works!</p>
 <div class="container">
   <div class="card">
-    <div class="container">
-      <div class="row">
-        <h4>Set ID: {{set.id}}</h4>
-      </div>
-      <div class="row">
-        <h4>Exercise: {{set.exercise_Name}}</h4>
-      </div>
+    <div class="card-head">
+      <h2>{{cardTitle}}</h2>
     </div>
+    <div class="card-body">
+      <div class="form-group">
+        <label>Exercise</label>
+        <input type="text" class="form-control" [(ngModel)]="set.exercise_Name"/>
+        <label>Muscle Group</label>
+        <select class="form-control" id="" [(ngModel)]="set.muscle_group">
+          <option value="" selected disabled>Select a Muscle Group</option>
+          <!-- <option [value]="" *ngFor="let muscles of muscleGroup">{{muscles.name}}</option> -->
+        </select>
+        <br>
+        <label>Weight</label>
+        <input type="number" class="form-control" [(ngModel)]="set.weight"/>
+        <label>Reps</label>
+        <input type="number" class="form-control" [(ngModel)]="set.reps"/>
+      </div>
+      <hr>
+      <!-- <button class="btn btn-success" (click)="addSet()">
+        Add Set
+      </button> -->
   <hr/>
   <a routerLink="/tracker">
     Go Back

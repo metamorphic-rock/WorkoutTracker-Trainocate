@@ -9,6 +9,7 @@ import { GetSetItemsService } from 'src/app/services/get-set-items.service'
   styleUrls: ['./set-item.component.scss']
 })
 export class SetItemComponent implements OnInit{
+  cardTitle:string="Edit Set"
   id:number
   set: SetItem={
     id: 0,

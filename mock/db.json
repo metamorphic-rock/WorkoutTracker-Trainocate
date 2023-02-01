@@ -104,33 +104,8 @@
             "id":6,
             "weight":100,
             "reps":8
-        },
-
-
-        {
-            "exercise_id":3,
-            "exercise_Name":"Squat",
-            "muscle_group":"Quads",
-            "id":7,
-            "weight":60,
-            "reps":10
-        },
-        {
-            "exercise_id":3,
-            "exercise_Name":"Squat",
-            "muscle_group":"Quads",
-            "id":8,
-            "weight":60,
-            "reps":10
-        },
-        {
-            "exercise_id":3,
-            "exercise_Name":"Squat",
-            "muscle_group":"Quads",
-            "id":9,
-            "weight":60,
-            "reps":8
         }
+
     ]
 
 }
