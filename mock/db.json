@@ -50,5 +50,69 @@
       "name": "Calves"
     }
   ],
-  "exercise_sets": []
+  "exercise_sets": [
+    {
+      "id": 1,
+      "exercise_Name": "a",
+      "muscle_group": "Chest",
+      "weight": 100,
+      "reps": 1
+    },
+    {
+      "id": 2,
+      "exercise_Name": "a",
+      "muscle_group": "Chest",
+      "weight": 100,
+      "reps": 2
+    },
+    {
+      "id": 3,
+      "exercise_Name": "a",
+      "muscle_group": "Chest",
+      "weight": 100,
+      "reps": 3
+    },
+    {
+      "id": 4,
+      "exercise_Name": "b",
+      "muscle_group": "Back",
+      "weight": 200,
+      "reps": 10
+    },
+    {
+      "id": 5,
+      "exercise_Name": "b",
+      "muscle_group": "Back",
+      "weight": 200,
+      "reps": 11
+    },
+    {
+      "id": 6,
+      "exercise_Name": "b",
+      "muscle_group": "Back",
+      "weight": 200,
+      "reps": 12
+    },
+    {
+      "id": 7,
+      "exercise_Name": "c",
+      "muscle_group": "Shoulders",
+      "weight": 300,
+      "reps": 21
+    },
+    {
+      "id": 8,
+      "exercise_Name": "c",
+      "muscle_group": "Shoulders",
+      "weight": 300,
+      "reps": 22
+    },
+    {
+      "id": 9,
+      "exercise_Name": "c",
+      "muscle_group": "Shoulders",
+      "weight": 300,
+      "reps": 23
+    }
+  ]
 }

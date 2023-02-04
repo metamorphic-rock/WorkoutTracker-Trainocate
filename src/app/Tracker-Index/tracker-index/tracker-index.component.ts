@@ -3,6 +3,7 @@ import {SetItem} from '../../models/set-items';
 import { WorkoutSummary } from '../../models/workout-summary';
 import { CalculateVolumeService } from '../../services/calculate-volume.service';
 import { GetSetItemsService } from '../../services/get-set-items.service';
+import { GenerateExerciseItemFromSetService } from '../../services/generate-exercise-item-from-set.service';
 
 @Component({
   selector: 'app-tracker-index',
@@ -30,7 +31,8 @@ export class TrackerIndexComponent implements OnInit{
     })
   }
   constructor(private calculateVolumeService: CalculateVolumeService, 
-              private getSetItemsService:GetSetItemsService){}
+              private getSetItemsService:GetSetItemsService,
+              private generateExerciseFromSetService:GenerateExerciseItemFromSetService){}
   updateSummary=()=>{
     this.workoutSummary.chest.totalVolume=this.calculateVolumeService.calculateVolumeByMuscleGroup(this.setItems,"Chest");
     this.workoutSummary.chest.totalSets=this.calculateVolumeService.calculateTotalSetsByMuscleGroup(this.setItems,"Chest");
