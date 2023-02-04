@@ -21,7 +21,9 @@ const appRoutes: Routes=[
   {path:'home',component:HomePageComponent},
   {path:'tracker',component:TrackerIndexComponent},
   {path:'workout-history',component:WorkoutHistoryComponent},
-  {path:'set-item/:id',component:SetItemComponent}
+  {path:'set-item/:id',component:SetItemComponent},
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', redirectTo: '/home'}
 ]
 
 
