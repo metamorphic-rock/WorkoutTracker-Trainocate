@@ -18,25 +18,25 @@ export class GenerateExerciseItemFromSetService {
         exercises.push(element.exercise_Name.toLocaleLowerCase())
       }
     })
-    let exerciseItems: ExerciseItem[]
-    exercises.forEach((exercise)=>{
-      let exerciseItem: ExerciseItem={
-        'id':0,
-        'name':"",
-        'reps':[],
-        'weight':[]
-      }
-      exerciseItem.name=exercise;
-      sets.forEach((element:SetItem)=>{
-        if(exercise==element.exercise_Name.toLocaleLowerCase()){
-          exerciseItem.weight.push(element.weight)
-          exerciseItem.reps.push(element.reps)
-        }else{
-          exerciseItem.id++;
-        }
-        console.log(exerciseItem)
-      })
-    })
+    // let exerciseItems: ExerciseItem[]
+    // exercises.forEach((exercise)=>{
+    //   let exerciseItem: ExerciseItem={
+    //     'id':0,
+    //     'name':"",
+    //     'reps':[],
+    //     'weight':[]
+    //   }
+    //   exerciseItem.name=exercise;
+    //   sets.forEach((element:SetItem)=>{
+    //     if(exercise==element.exercise_Name.toLocaleLowerCase()){
+    //       exerciseItem.weight.push(element.weight)
+    //       exerciseItem.reps.push(element.reps)
+    //     }else{
+    //       exerciseItem.id++;
+    //     }
+    //     console.log(exerciseItem)
+    //   })
+    // })
     console.log("Creating exercises")
   }
 }

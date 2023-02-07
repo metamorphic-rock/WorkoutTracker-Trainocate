@@ -1,19 +1,11 @@
 {
-  "exercises": [
+  "workout_items": [
+    {}
+  ],
+  "exercise_items": [
     {
       "id": 1,
-      "exercise_name": "Benchpress",
-      "muscle_group_id": 1
-    },
-    {
-      "id": 2,
-      "exercise_name": "Squat",
-      "muscle_group_id": 6
-    },
-    {
-      "id": 3,
-      "exercise_name": "Row",
-      "muscle_group_id": 2
+      "exerciseName": "Benchpress"
     }
   ],
   "muscle_groups": [
@@ -50,69 +42,13 @@
       "name": "Calves"
     }
   ],
-  "exercise_sets": [
-    {
-      "id": 1,
-      "exercise_Name": "a",
-      "muscle_group": "Chest",
-      "weight": 100,
-      "reps": 1
-    },
+  "set_items": [
     {
       "id": 2,
-      "exercise_Name": "a",
+      "exercise_Name": "Benchpress",
       "muscle_group": "Chest",
       "weight": 100,
-      "reps": 2
-    },
-    {
-      "id": 3,
-      "exercise_Name": "a",
-      "muscle_group": "Chest",
-      "weight": 100,
-      "reps": 3
-    },
-    {
-      "id": 4,
-      "exercise_Name": "b",
-      "muscle_group": "Back",
-      "weight": 200,
       "reps": 10
-    },
-    {
-      "id": 5,
-      "exercise_Name": "b",
-      "muscle_group": "Back",
-      "weight": 200,
-      "reps": 11
-    },
-    {
-      "id": 6,
-      "exercise_Name": "b",
-      "muscle_group": "Back",
-      "weight": 200,
-      "reps": 12
-    },
-    {
-      "id": 7,
-      "exercise_Name": "c",
-      "muscle_group": "Shoulders",
-      "weight": 300,
-      "reps": 21
-    },
-    {
-      "id": 8,
-      "exercise_Name": "c",
-      "muscle_group": "Shoulders",
-      "weight": 300,
-      "reps": 22
-    },
-    {
-      "id": 9,
-      "exercise_Name": "c",
-      "muscle_group": "Shoulders",
-      "weight": 300,
-      "reps": 23
     }
   ]
 }

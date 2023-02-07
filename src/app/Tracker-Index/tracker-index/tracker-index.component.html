@@ -1,9 +1,29 @@
 <div class="container">
-    <input-form-component (addSetEvent)="addSetEventHandler($event)"></input-form-component> <!--(event) should be modified to name the event--> 
-    <div class="card" *ngIf="this.setItems.length>0">
-        <app-table-header [numberOfSets]="setItems.length"></app-table-header>
-        <output-table-component (deleteSetEvent)="deleteSetEventHandler($event)" (editSetEvent)="editSetEventHandler()" 
-        *ngFor="let set of setItems" [set]="set"></output-table-component>
-    </div> 
-  <workout-summary-component *ngIf="this.setItems.length>0" [workoutSummary]="workoutSummary"></workout-summary-component>
-  </div>  
+    <div class="container" *ngIf="!workoutStarts">
+        <div class="card-body">
+            <div class="form-group">
+                <label>Workout Title: </label>
+                <input type="text" class="form-control" [(ngModel)]="workout.workoutTitle"/>
+                <label> Date: </label>
+                <input type="date" class="form-control" [(ngModel)]="workout.date"/>
+            </div>
+        </div>
+    </div>
+    <h1 *ngIf="workoutStarts">{{workout.workoutTitle}}</h1>
+    <div class="mt-2 mb-3"></div>
+    <button (click)="StartAndEndAWorkout()" class="btn btn-primary">
+        {{this.workoutStarts?'End':'Start'}} Workout
+    </button>
+    <div class="container" *ngIf="workoutStarts">
+        <input-form-component (addSetEvent)="addSetEventHandler($event)"></input-form-component>
+        <!--(event) should be modified to name the event-->
+        <div class="card" *ngIf="this.setItems.length>0">
+            <app-table-header [numberOfSets]="setItems.length"></app-table-header>
+            <output-table-component (deleteSetEvent)="deleteSetEventHandler($event)"
+                (editSetEvent)="editSetEventHandler()" *ngFor="let set of setItems"
+                [set]="set"></output-table-component>
+        </div>
+        <workout-summary-component *ngIf="this.setItems.length>0"
+            [workoutSummary]="workoutSummary"></workout-summary-component>
+    </div>
+</div>

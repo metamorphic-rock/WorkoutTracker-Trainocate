@@ -1,7 +1,5 @@
 export interface ExerciseItem{
     "id": number
-    "name": string
+    "exerciseName": string
     "workoutId"?:number,
-    "weight": number[]
-    "reps": number[]
 }

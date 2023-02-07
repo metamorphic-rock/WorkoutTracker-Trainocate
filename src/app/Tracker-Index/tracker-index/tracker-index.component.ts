@@ -4,6 +4,7 @@ import { WorkoutSummary } from '../../models/workout-summary';
 import { CalculateVolumeService } from '../../services/calculate-volume.service';
 import { GetSetItemsService } from '../../services/get-set-items.service';
 import { GenerateExerciseItemFromSetService } from '../../services/generate-exercise-item-from-set.service';
+import { WorkoutItem } from 'src/app/models/workout-items';
 
 @Component({
   selector: 'app-tracker-index',
@@ -11,6 +12,13 @@ import { GenerateExerciseItemFromSetService } from '../../services/generate-exer
   styleUrls: ['./tracker-index.component.scss']
 })
 export class TrackerIndexComponent implements OnInit{
+  @Input() workout: WorkoutItem={
+    'id':0,
+    'workoutTitle': "",
+    'date': new Date,
+    "exercisesPerformed": []
+  }
+  
   @Input() set: SetItem;
   setItems: SetItem[]=[];
   workoutSummary: WorkoutSummary={
@@ -30,6 +38,7 @@ export class TrackerIndexComponent implements OnInit{
       this.updateSummary();
     })
   }
+  
   constructor(private calculateVolumeService: CalculateVolumeService, 
               private getSetItemsService:GetSetItemsService,
               private generateExerciseFromSetService:GenerateExerciseItemFromSetService){}
@@ -57,6 +66,16 @@ export class TrackerIndexComponent implements OnInit{
 
     this.workoutSummary.calve.totalVolume=this.calculateVolumeService.calculateVolumeByMuscleGroup(this.setItems,"Calves");
     this.workoutSummary.calve.totalSets=this.calculateVolumeService.calculateTotalSetsByMuscleGroup(this.setItems,"Calves");
+  };
+  workoutStarts:boolean=false;
+  StartAndEndAWorkout=()=>{
+    if(this.workoutStarts==true){
+      this.workoutStarts=false;
+    }else{
+      this.workoutStarts=true;
+    }
+    console.log(this.workout.date);
+    console.log(this.workout.workoutTitle);
   }
   addSetEventHandler=(payload:SetItem)=>{
     console.log("handling add set event");

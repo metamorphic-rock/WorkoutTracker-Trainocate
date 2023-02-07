@@ -25,13 +25,13 @@ export class SetItemComponent implements OnInit{
 
   ngOnInit(): void {
     this.id = Number(this.route.snapshot.paramMap.get('id'))
-    this.getSetItemsService.getSetById(this.id).subscribe((set)=>{
+    this.getSetItemsService.getSetById(this.id).subscribe((set:SetItem)=>{
       this.set=set
     })
     console.log(`ShowComponent for id ${this.id}`)
   }
   updateSet=(set:SetItem,id:number)=>{
-    this.getSetItemsService.editSet(set,id).subscribe((set)=>{
+    this.getSetItemsService.editSet(set,id).subscribe((set:SetItem)=>{
       console.log("update set")
     })
   }
