@@ -1,6 +1,28 @@
 {
   "workout_items": [
-    {}
+    {
+      "id": 1,
+      "workoutTitle": "Legs",
+      "date": "07-02-2023"
+    },
+    {
+      "id": 2,
+      "workoutTitle": "a",
+      "date": "1111-11-11",
+      "exercisesPerformed": []
+    },
+    {
+      "id": 3,
+      "workoutTitle": "Legs",
+      "date": "1111-11-11",
+      "exercisesPerformed": []
+    },
+    {
+      "id": 4,
+      "workoutTitle": "Pull",
+      "date": "2023-02-08",
+      "exercisesPerformed": []
+    }
   ],
   "exercise_items": [
     {
@@ -42,13 +64,5 @@
       "name": "Calves"
     }
   ],
-  "set_items": [
-    {
-      "id": 2,
-      "exercise_Name": "Benchpress",
-      "muscle_group": "Chest",
-      "weight": 100,
-      "reps": 10
-    }
-  ]
+  "set_items": []
 }

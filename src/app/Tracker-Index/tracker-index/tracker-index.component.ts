@@ -4,6 +4,7 @@ import { WorkoutSummary } from '../../models/workout-summary';
 import { CalculateVolumeService } from '../../services/calculate-volume.service';
 import { GetSetItemsService } from '../../services/get-set-items.service';
 import { GenerateExerciseItemFromSetService } from '../../services/generate-exercise-item-from-set.service';
+import { GenerateWorkoutItemService } from 'src/app/services/generate-workout-item.service';
 import { WorkoutItem } from 'src/app/models/workout-items';
 
 @Component({
@@ -41,7 +42,8 @@ export class TrackerIndexComponent implements OnInit{
   
   constructor(private calculateVolumeService: CalculateVolumeService, 
               private getSetItemsService:GetSetItemsService,
-              private generateExerciseFromSetService:GenerateExerciseItemFromSetService){}
+              private generateExerciseFromSetService:GenerateExerciseItemFromSetService,
+              private generateWorkoutItemService:GenerateWorkoutItemService){}
   updateSummary=()=>{
     this.workoutSummary.chest.totalVolume=this.calculateVolumeService.calculateVolumeByMuscleGroup(this.setItems,"Chest");
     this.workoutSummary.chest.totalSets=this.calculateVolumeService.calculateTotalSetsByMuscleGroup(this.setItems,"Chest");
@@ -69,13 +71,24 @@ export class TrackerIndexComponent implements OnInit{
   };
   workoutStarts:boolean=false;
   StartAndEndAWorkout=()=>{
-    if(this.workoutStarts==true){
-      this.workoutStarts=false;
+    if( this.workout.workoutTitle=="" || this.workout.date==null){
+      return;
     }else{
-      this.workoutStarts=true;
+      if(this.workoutStarts==true){
+        this.workoutStarts=false;
+        this.workout.workoutTitle=""
+        this.workout.date=new Date
+      }else{
+        this.workoutStarts=true;
+        let payload={...this.workout}
+        this.generateWorkoutItemService.saveWorkout(payload).subscribe()
+        // var workouts=this.generateWorkoutItemService.getAllWorkout().subscribe()
+        // console.log(workouts);
+      }
+      console.log(this.workout.date);
+      console.log(this.workout.workoutTitle);
     }
-    console.log(this.workout.date);
-    console.log(this.workout.workoutTitle);
+    
   }
   addSetEventHandler=(payload:SetItem)=>{
     console.log("handling add set event");

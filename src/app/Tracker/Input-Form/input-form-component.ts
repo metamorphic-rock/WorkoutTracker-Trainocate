@@ -29,7 +29,7 @@ export class InputFormComponentComponent{
     this.getSetItemService.saveSet(payload).subscribe((set)=>{
       this.addSetEvent.emit(set);
     })
-    this.sets.push(payload)
+    this.sets.push(payload) //just testing
     this.generateExerciseItemFromSetService.createAnExerciseList(this.sets)
   }
 
