@@ -10,6 +10,7 @@ import { GenerateExerciseItemFromSetService } from 'src/app/services/generate-ex
 })
 export class InputFormComponentComponent{
   sets: SetItem[]=[]; //just testing
+  @Input() workoutId:number=0 //connect this to the tracker-index
   @Input() set:SetItem={
     'id': 0,
     'exercise_Name':"",

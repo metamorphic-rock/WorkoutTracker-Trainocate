@@ -2,32 +2,33 @@
   "workout_items": [
     {
       "id": 1,
-      "workoutTitle": "Legs",
-      "date": "07-02-2023"
+      "workoutTitle": "A1",
+      "date": "0011-11-11",
+      "exercisesPerformed": []
     },
     {
       "id": 2,
-      "workoutTitle": "a",
-      "date": "1111-11-11",
+      "workoutTitle": "a2",
+      "date": "0003-01-02",
       "exercisesPerformed": []
     },
     {
       "id": 3,
-      "workoutTitle": "Legs",
-      "date": "1111-11-11",
+      "workoutTitle": "a3",
+      "date": "0003-01-02",
       "exercisesPerformed": []
     },
     {
       "id": 4,
-      "workoutTitle": "Pull",
-      "date": "2023-02-08",
+      "workoutTitle": "a4",
+      "date": "0033-11-22",
       "exercisesPerformed": []
-    }
-  ],
-  "exercise_items": [
+    },
     {
-      "id": 1,
-      "exerciseName": "Benchpress"
+      "id": 5,
+      "workoutTitle": "a5",
+      "date": "0003-01-02",
+      "exercisesPerformed": []
     }
   ],
   "muscle_groups": [

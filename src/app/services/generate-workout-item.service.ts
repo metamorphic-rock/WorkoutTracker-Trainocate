@@ -22,6 +22,11 @@ export class GenerateWorkoutItemService {
     workouts = this.http.get<WorkoutItem[]>(`${this.baseUrl}/workout_items`, httpOptions)
     return workouts
   }
+  getWorkoutByTitleAndDate = (workoutTitle:string, date:Date ): Observable<WorkoutItem> => {
+
+    let workout = this.http.get<WorkoutItem>(`${this.baseUrl}/workout_items/${workoutTitle}`, httpOptions)
+    return workout
+  }
   saveWorkout =(workoutItem:WorkoutItem): Observable<WorkoutItem>=>{
     let workout: Observable<WorkoutItem>
     if (workoutItem.id) {
