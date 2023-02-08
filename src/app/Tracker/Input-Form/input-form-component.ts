@@ -13,9 +13,10 @@ export class InputFormComponentComponent{
   @Input() workoutId:number=0 //connect this to the tracker-index
   @Input() set:SetItem={
     'id': 0,
-    'exercise_Name':"",
-    'exercise_Id':0,
-    'muscle_group':"",
+    'exerciseName':"",
+    'exerciseId':0,
+    'workoutId':0,
+    'muscleGroup':"",
     'weight':0,
     'reps':0
   };
@@ -23,11 +24,12 @@ export class InputFormComponentComponent{
               private generateExerciseItemFromSetService: GenerateExerciseItemFromSetService){}
   @Output() addSetEvent: EventEmitter<SetItem>=new EventEmitter<SetItem>(); //Change the Any to interface Type
   addSet=()=>{
-    if(this.set.exercise_Name==""||this.set.muscle_group==""||this.set.reps<=0||this.set.weight<0){
+    if(this.set.exerciseName==""||this.set.muscleGroup==""||this.set.reps<=0||this.set.weight<0){
       return;
     };
     let payload={...this.set}
     console.log("Add set");
+    payload.workoutId=this.workoutId
     this.getSetItemService.saveSet(payload).subscribe((set)=>{
       this.addSetEvent.emit(set);
     })
@@ -38,11 +40,11 @@ export class InputFormComponentComponent{
 
   @Output() addExerciseEvent: EventEmitter<any>=new EventEmitter<any>()
   finishExercise=()=>{
-    if(this.set.exercise_Name==""||this.set.muscle_group==""||this.set.reps<=0||this.set.weight<0){
+    if(this.set.exerciseName==""||this.set.muscleGroup==""||this.set.reps<=0||this.set.weight<0){
       return;
     };
-    this.set.exercise_Name='';
-    this.set.muscle_group='';
+    this.set.exerciseName='';
+    this.set.muscleGroup='';
     this.set.weight=0;
     this.set.reps=0;
     console.log("Finish exercise");

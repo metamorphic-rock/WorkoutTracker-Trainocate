@@ -106,6 +106,7 @@ export class TrackerIndexComponent implements OnInit {
 
   addSetEventHandler = (payload: SetItem) => {
     console.log("handling add set event");
+    payload.workoutId=this.workoutId
     console.log(payload);
     let newSet = { ...payload };
     this.setItems.push(newSet);

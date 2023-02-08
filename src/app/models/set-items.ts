@@ -1,8 +1,9 @@
 export interface SetItem{
     "id": number
-    "exercise_Name":string
-    "exercise_Id"?: number
-    "muscle_group": string
+    "exerciseName":string
+    "exerciseId"?: number
+    "workoutId"?:number
+    "muscleGroup": string
     "weight": number
     "reps": number
 }

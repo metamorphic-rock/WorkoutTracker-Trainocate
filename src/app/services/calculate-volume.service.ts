@@ -9,7 +9,7 @@ export class CalculateVolumeService {
   calculateVolumeByMuscleGroup=(setItems:SetItem[],muscleGroup:string): number=>{
     let workoutVolume=0;
     setItems.forEach((element:SetItem) => {
-      if(element.muscle_group==muscleGroup){
+      if(element.muscleGroup==muscleGroup){
         workoutVolume=workoutVolume+(element.weight*element.reps)
       }
     });
@@ -18,7 +18,7 @@ export class CalculateVolumeService {
   calculateTotalSetsByMuscleGroup=(setItems:SetItem[],muscleGroup:string):number=>{
     let totalSet=0;
     setItems.forEach((element:SetItem)=>{
-      if(element.muscle_group==muscleGroup){
+      if(element.muscleGroup==muscleGroup){
         totalSet+=1;
       }
     })

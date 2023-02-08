@@ -14,8 +14,8 @@ export class GenerateExerciseItemFromSetService {
     
     let exercises: string[]=[]
     sets.forEach((element:SetItem)=>{
-      if(!exercises.includes(element.exercise_Name.toLocaleLowerCase())){
-        exercises.push(element.exercise_Name.toLocaleLowerCase())
+      if(!exercises.includes(element.exerciseName.toLocaleLowerCase())){
+        exercises.push(element.exerciseName.toLocaleLowerCase())
       }
     })
     // let exerciseItems: ExerciseItem[]

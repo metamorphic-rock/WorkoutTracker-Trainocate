@@ -13,8 +13,10 @@ export class SetItemComponent implements OnInit{
   id:number
   set: SetItem={
     id: 0,
-    exercise_Name:"",
-    muscle_group:"",
+    exerciseName:"",
+    exerciseId:0,
+    workoutId:0,
+    muscleGroup:"",
     weight:0,
     reps:0
   }
