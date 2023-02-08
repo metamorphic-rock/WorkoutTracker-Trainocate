@@ -14,6 +14,7 @@ export class InputFormComponentComponent{
   @Input() set:SetItem={
     'id': 0,
     'exercise_Name':"",
+    'exercise_Id':0,
     'muscle_group':"",
     'weight':0,
     'reps':0
@@ -32,6 +33,7 @@ export class InputFormComponentComponent{
     })
     this.sets.push(payload) //just testing
     this.generateExerciseItemFromSetService.createAnExerciseList(this.sets)
+    console.log("workout id inside add set event :"+this.workoutId)
   }
 
   @Output() addExerciseEvent: EventEmitter<any>=new EventEmitter<any>()

@@ -15,7 +15,7 @@
         {{this.workoutStarts?'End':'Start'}} Workout
     </button>
     <div class="container" *ngIf="workoutStarts">
-        <input-form-component (addSetEvent)="addSetEventHandler($event)"></input-form-component>
+        <input-form-component (addSetEvent)="addSetEventHandler($event)" [workoutId]="workoutId"></input-form-component>
         <!--(event) should be modified to name the event-->
         <div class="card" *ngIf="this.setItems.length>0">
             <app-table-header [numberOfSets]="setItems.length"></app-table-header>

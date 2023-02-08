@@ -70,7 +70,7 @@ export class TrackerIndexComponent implements OnInit {
     this.workoutSummary.calve.totalSets = this.calculateVolumeService.calculateTotalSetsByMuscleGroup(this.setItems, "Calves");
   };
   workoutStarts: boolean = false;
-  workoutId: number=0;
+  workoutId: number = 0;
   StartAndEndAWorkout = () => {
     if (this.workout.workoutTitle == "" || this.workout.date == null) {
       return;
@@ -90,23 +90,20 @@ export class TrackerIndexComponent implements OnInit {
             var WorkoutId = Number(containsTitle?.id)
             this.workoutId = WorkoutId;
             console.log("inside of the subscription " + this.workoutId);
+            return this.workoutId
           }
-          //return WorkoutId
-          //return WorkoutId
-          // console.log(containsTitle?.id)
+          return this.workoutId
         })
 
-        console.log("outside the subscription" + this.workoutId)
-
-        //this.generateWorkoutItemService.getWorkoutByTitleAndDate(this.workout.workoutTitle,this.workout.date).subscribe()
-
-
+        // console.log(this.workout.date);
+        // console.log(this.workout.workoutTitle);
       }
-      // console.log(this.workout.date);
-      // console.log(this.workout.workoutTitle);
+      console.log("outside the subscription " + this.workoutId)
+      return this.workoutId
     }
 
   }
+
   addSetEventHandler = (payload: SetItem) => {
     console.log("handling add set event");
     console.log(payload);
