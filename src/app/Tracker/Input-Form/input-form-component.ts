@@ -1,6 +1,7 @@
 import { Component,Input, Output, EventEmitter} from '@angular/core';
 import { MuscleGroupItems } from 'src/app/models/mucscle_group-items';
 import { SetItem } from 'src/app/models/set-items';
+import { ExerciseItem } from 'src/app/models/exercise-items';
 import { GetSetItemsService } from 'src/app/services/get-set-items.service';
 import { GenerateExerciseItemFromSetService } from 'src/app/services/generate-exercise-item-from-set.service';
 @Component({
@@ -35,6 +36,7 @@ export class InputFormComponentComponent{
     })
     this.sets.push(payload) //just testing
     this.generateExerciseItemFromSetService.createAnExerciseList(this.sets)
+    
     console.log("workout id inside add set event :"+this.workoutId)
   }
 
