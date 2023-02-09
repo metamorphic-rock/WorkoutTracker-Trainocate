@@ -44,7 +44,7 @@ export class InputFormComponentComponent{
     console.log("exercise id inside of add set B "+this.set.exerciseId)
     console.log(this.set)
     
-  }
+  } //added a comment
 
   @Output() addExerciseEvent: EventEmitter<any>=new EventEmitter<any>()
   finishExercise=()=>{
