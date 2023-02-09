@@ -23,18 +23,26 @@ export class InputFormComponentComponent{
   };
   constructor(private getSetItemService: GetSetItemsService,
               private generateExerciseItemFromSetService: GenerateExerciseItemFromSetService){}
-  @Output() addSetEvent: EventEmitter<SetItem>=new EventEmitter<SetItem>(); //Change the Any to interface Type
+  @Output() addSetEvent: EventEmitter<SetItem>=new EventEmitter<SetItem>();
   addSet=()=>{
     if(this.set.exerciseName==""||this.set.muscleGroup==""||this.set.reps<=0||this.set.weight<0){
       return;
     };
     let payload={...this.set}
     payload.workoutId=this.workoutId
+    console.log("workout id inside of add set A "+payload.workoutId)
+    this.generateExerciseItemFromSetService.getExerciseId(payload).subscribe(e=>{
+      console.log("get exercise id" +e?.id)
+      this.set.exerciseId=e?.id
+    })
+    
     this.getSetItemService.saveSet(payload).subscribe((set)=>{
       this.addSetEvent.emit(set);
     })
     this.sets.push(payload) //just testing
-    this.generateExerciseItemFromSetService.createAnExerciseList(this.sets)
+    this.generateExerciseItemFromSetService.createAnExerciseList(this.sets) //modify later
+    console.log("exercise id inside of add set B "+this.set.exerciseId)
+    console.log(this.set)
     
   }
 

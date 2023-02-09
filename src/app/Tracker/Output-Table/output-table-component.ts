@@ -2,7 +2,6 @@ import { Component,Input,Output, EventEmitter } from '@angular/core';
 import { GetSetItemsService } from 'src/app/services/get-set-items.service';
 import {SetItem} from '../../models/set-items';
 
-
 @Component({
   selector: 'output-table-component',
   templateUrl: './output-table-component.html',
@@ -14,7 +13,6 @@ export class OutputTableComponentComponent {
   @Output() editSetEvent : EventEmitter<any>=new EventEmitter<any>();
   EditSet=()=>{
     console.log("Edit set");
-
   };
   @Output() deleteSetEvent: EventEmitter<any>=new EventEmitter<any>();
   DeleteSet=()=>{
@@ -24,6 +22,5 @@ export class OutputTableComponentComponent {
     this.getSetItemService.deleteSet(id).subscribe(()=>{
       this.deleteSetEvent.emit(this.set);
     })
-    
   };
 }

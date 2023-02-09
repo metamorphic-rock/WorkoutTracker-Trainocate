@@ -41,7 +41,6 @@ export class TrackerIndexComponent implements OnInit {
 
   constructor(private calculateVolumeService: CalculateVolumeService,
     private getSetItemsService: GetSetItemsService,
-    private generateExerciseFromSetService: GenerateExerciseItemFromSetService,
     private generateWorkoutItemService: GenerateWorkoutItemService) { }
   updateSummary = () => {
     this.workoutSummary.chest.totalVolume = this.calculateVolumeService.calculateVolumeByMuscleGroup(this.setItems, "Chest");
@@ -68,14 +67,14 @@ export class TrackerIndexComponent implements OnInit {
     this.workoutSummary.calve.totalVolume = this.calculateVolumeService.calculateVolumeByMuscleGroup(this.setItems, "Calves");
     this.workoutSummary.calve.totalSets = this.calculateVolumeService.calculateTotalSetsByMuscleGroup(this.setItems, "Calves");
   };
-  workoutStarts: boolean = false;
-  workoutId: number = 0;
+  workoutStarts: boolean = false
+  workoutId: number = 0
   StartAndEndAWorkout = () => {
     if (this.workout.workoutTitle == "" || this.workout.date == null) {
       return;
     } else {
       if (this.workoutStarts == true) {
-        this.workoutStarts = false;
+        this.workoutStarts = false
         this.workout.workoutTitle = ""
         this.workout.date = new Date
       } else {
@@ -87,7 +86,8 @@ export class TrackerIndexComponent implements OnInit {
           var containsDate = w.find(i => i.date === this.workout.date)
           if (containsTitle && containsDate) {
             var WorkoutId = Number(containsTitle?.id)
-            this.workoutId = WorkoutId;
+            this.workoutId = WorkoutId
+            console.log(this.workoutId)
             return this.workoutId
           }
           return this.workoutId
@@ -105,6 +105,7 @@ export class TrackerIndexComponent implements OnInit {
     let newSet = { ...payload };
     this.setItems.push(newSet);
     console.log(this.setItems.length);
+    this.ngOnInit()
     this.updateSummary();
   };
   deleteSetEventHandler = (set: any) => { //fix the bug, workout sumarry is not updating

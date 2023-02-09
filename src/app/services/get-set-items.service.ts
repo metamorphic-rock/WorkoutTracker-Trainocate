@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { SetItem } from '../models/set-items';
+import { GenerateExerciseItemFromSetService } from './generate-exercise-item-from-set.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -15,7 +16,8 @@ const httpOptions = {
 export class GetSetItemsService {
   baseUrl: string = 'http://localhost:5211'
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private generateExerciseItemFromSetService:GenerateExerciseItemFromSetService) { 
+  }
 
   getAllSet = (): Observable<SetItem[]> => {
     let sets: Observable<SetItem[]>
@@ -32,8 +34,10 @@ export class GetSetItemsService {
       const url = `${this.baseUrl}/set_items/${setItem.id}`
       set = this.http.put<SetItem>(url, setItem, httpOptions)
     } else {
-      console.log("set item saveSet"+setItem)
-      let payload={exerciseName:setItem.exerciseName,muscleGroup:setItem.muscleGroup,weight:setItem.weight,reps:setItem.reps,workoutId:1,exerciseId:4}
+      let payload = {
+        exerciseName: setItem.exerciseName, muscleGroup: setItem.muscleGroup,
+        weight: setItem.weight, reps: setItem.reps, workoutId: 1, exerciseId: setItem.exerciseId
+      } //fix this later
       console.log(payload)
       set = this.http.post<SetItem>(`${this.baseUrl}/set_items`, payload, httpOptions)
     }
