@@ -2,25 +2,7 @@
   "workout_items": [
     {
       "id": 1,
-      "workoutTitle": "Push",
-      "date": "0001-01-01",
-      "exercisesPerformed": []
-    },
-    {
-      "id": 2,
-      "workoutTitle": "Push",
-      "date": "0001-01-01",
-      "exercisesPerformed": []
-    },
-    {
-      "id": 3,
-      "workoutTitle": "push",
-      "date": "0001-01-01",
-      "exercisesPerformed": []
-    },
-    {
-      "id": 4,
-      "workoutTitle": "Push",
+      "workoutTitle": "a",
       "date": "0001-01-01",
       "exercisesPerformed": []
     }
@@ -28,7 +10,7 @@
   "exercise_items": [
     {
       "id": 1,
-      "exerciseName": "c",
+      "exerciseName": "a",
       "workoutId": 0,
       "performedSets": []
     }
@@ -39,16 +21,7 @@
       "exerciseName": "a",
       "exerciseId": 0,
       "workoutId": 1,
-      "muscleGroup": "Core",
-      "weight": 1,
-      "reps": 1
-    },
-    {
-      "id": 2,
-      "exerciseName": "c",
-      "exerciseId": 0,
-      "workoutId": 1,
-      "muscleGroup": "Calves",
+      "muscleGroup": "Chest",
       "weight": 1,
       "reps": 1
     }

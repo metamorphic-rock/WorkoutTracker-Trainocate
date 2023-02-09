@@ -14,18 +14,13 @@ const httpOptions = {
 })
 export class GenerateWorkoutItemService {
 
-  baseUrl: string = 'http://localhost:5000'
+  baseUrl: string = 'http://localhost:5211'
 
   constructor(private http: HttpClient) { }
   getAllWorkout = (): Observable<WorkoutItem[]> => {
     let workouts: Observable<WorkoutItem[]>
     workouts = this.http.get<WorkoutItem[]>(`${this.baseUrl}/workout_items`, httpOptions)
     return workouts
-  }
-  getWorkoutByTitleAndDate = (workoutTitle:string, date:Date ): Observable<WorkoutItem> => {
-
-    let workout = this.http.get<WorkoutItem>(`${this.baseUrl}/workout_items/${workoutTitle}`, httpOptions)
-    return workout
   }
   saveWorkout =(workoutItem:WorkoutItem): Observable<WorkoutItem>=>{
     let workout: Observable<WorkoutItem>

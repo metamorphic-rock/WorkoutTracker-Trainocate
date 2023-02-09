@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component,Input,OnInit } from '@angular/core';
+import { GenerateWorkoutItemService } from '../services/generate-workout-item.service';
 
 @Component({
   selector: 'app-workout-history',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./workout-history.component.scss']
 })
 export class WorkoutHistoryComponent {
-
+  constructor (private generateWorkoutItemService:GenerateWorkoutItemService) {};
+  // ngOnInit(){
+  //   this.generateWorkoutItemService.getAllWorkout().subscribe()
+  // }
 }

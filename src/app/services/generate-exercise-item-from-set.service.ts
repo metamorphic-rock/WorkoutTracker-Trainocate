@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy, OnInit } from '@angular/core';
 import { SetItem } from '../models/set-items';
 import { ExerciseItem } from '../models/exercise-items';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class GenerateExerciseItemFromSetService {
-  baseUrl: string = 'http://localhost:5000'
+  baseUrl: string = 'http://localhost:5211'
 
   constructor(private http: HttpClient) { }
   saveExercise=(exerciseItem: ExerciseItem): Observable<ExerciseItem> => {
@@ -22,10 +22,14 @@ export class GenerateExerciseItemFromSetService {
       const url = `${this.baseUrl}/exercise_items/${exerciseItem.id}`
       exercise = this.http.put<ExerciseItem>(url, exerciseItem, httpOptions)
     } else {
-      exercise = this.http.post<ExerciseItem>(`${this.baseUrl}/exercise_items`, exerciseItem, httpOptions)
+      let payload={exerciseName:exerciseItem.exerciseName, workoutId:1}
+      console.log(payload)
+      exercise = this.http.post<ExerciseItem>(`${this.baseUrl}/exercise_items`, payload, httpOptions)
     }
+    
     return exercise;
   }
+  exercises: string[]=[];
   createAnExerciseList=(sets:SetItem[])=>{
     let exercise: ExerciseItem={
       'id':0,
@@ -33,18 +37,28 @@ export class GenerateExerciseItemFromSetService {
       'workoutId':0,
       'performedSets':[]
     }
-    let exercises: string[]=[]
+    console.log(this.exercises)
+    let newExerciseNumber: number=0;
+    let subscribed:boolean=false;
     sets.forEach((element:SetItem)=>{
-      if(!exercises.includes(element.exerciseName.toLocaleLowerCase())){
-        exercises.push(element.exerciseName.toLocaleLowerCase())
-        console.log(exercises)
-        exercise.exerciseName=element.exerciseName;
+      if(!this.exercises.includes(element.exerciseName)){
+        console.log(!this.exercises.includes(element.exerciseName))
+        console.log(element.exerciseName)
+        this.exercises.push(element.exerciseName)
+        exercise.exerciseName=element.exerciseName
+        // exercise.workoutId=1
+        console.log("You subscribe, You added this exercise "+exercise.exerciseName)
+        //console.log(this.exercises)
         exercise.workoutId=0
         this.saveExercise(exercise).subscribe()
-      }
-      console.log("creating an exercise in generateExerciseServices")
-      return exercise
-    }) 
+      }else if(this.exercises.includes(element.exerciseName)){
+        console.log(this.exercises.includes(element.exerciseName))
+        console.log("Unsubcribe")
+        //console.log(this.exercises)
+        // var saveExerciseSubscription= this.saveExercise(exercise).subscribe()
+        // saveExerciseSubscription.unsubscribe()        
+      }  
+    })
   }
     // let exerciseItems: ExerciseItem[]
     // exercises.forEach((exercise)=>{

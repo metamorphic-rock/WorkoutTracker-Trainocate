@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class GetSetItemsService {
-  baseUrl: string = 'http://localhost:5000'
+  baseUrl: string = 'http://localhost:5211'
 
   constructor(private http: HttpClient) { }
 
@@ -32,7 +32,10 @@ export class GetSetItemsService {
       const url = `${this.baseUrl}/set_items/${setItem.id}`
       set = this.http.put<SetItem>(url, setItem, httpOptions)
     } else {
-      set = this.http.post<SetItem>(`${this.baseUrl}/set_items`, setItem, httpOptions)
+      console.log("set item saveSet"+setItem)
+      let payload={exerciseName:setItem.exerciseName,muscleGroup:setItem.muscleGroup,weight:setItem.weight,reps:setItem.reps,workoutId:1,exerciseId:4}
+      console.log(payload)
+      set = this.http.post<SetItem>(`${this.baseUrl}/set_items`, payload, httpOptions)
     }
     return set
   }

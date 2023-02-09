@@ -33,7 +33,6 @@ export class TrackerIndexComponent implements OnInit {
     calve: { totalSets: 0, totalVolume: 0 }
   }
   ngOnInit(): void {    //calling service
-    console.log("ngOnInit is fired")
     this.getSetItemsService.getAllSet().subscribe((set) => {
       this.setItems = set;
       this.updateSummary();
@@ -89,24 +88,19 @@ export class TrackerIndexComponent implements OnInit {
           if (containsTitle && containsDate) {
             var WorkoutId = Number(containsTitle?.id)
             this.workoutId = WorkoutId;
-            console.log("inside of the subscription " + this.workoutId);
             return this.workoutId
           }
           return this.workoutId
         })
 
-        // console.log(this.workout.date);
-        // console.log(this.workout.workoutTitle);
       }
-      console.log("outside the subscription " + this.workoutId)
       return this.workoutId
     }
 
   }
 
   addSetEventHandler = (payload: SetItem) => {
-    console.log("handling add set event");
-    payload.workoutId=this.workoutId
+    payload.workoutId = this.workoutId
     console.log(payload);
     let newSet = { ...payload };
     this.setItems.push(newSet);

@@ -29,7 +29,6 @@ export class InputFormComponentComponent{
       return;
     };
     let payload={...this.set}
-    console.log("Add set");
     payload.workoutId=this.workoutId
     this.getSetItemService.saveSet(payload).subscribe((set)=>{
       this.addSetEvent.emit(set);
@@ -37,7 +36,6 @@ export class InputFormComponentComponent{
     this.sets.push(payload) //just testing
     this.generateExerciseItemFromSetService.createAnExerciseList(this.sets)
     
-    console.log("workout id inside add set event :"+this.workoutId)
   }
 
   @Output() addExerciseEvent: EventEmitter<any>=new EventEmitter<any>()
@@ -49,7 +47,6 @@ export class InputFormComponentComponent{
     this.set.muscleGroup='';
     this.set.weight=0;
     this.set.reps=0;
-    console.log("Finish exercise");
   }
   cardTitle: string="Log your Exercises Here";
   muscleGroup: MuscleGroupItems[]=[
@@ -79,12 +76,11 @@ export class InputFormComponentComponent{
   },
   {
       "id":7,
-      "name":"Hamstrings"
+      "name":"Glutes and Hamstrings"
   },
   {
       "id":8,
       "name":"Calves"
   }
-
   ];
 }
